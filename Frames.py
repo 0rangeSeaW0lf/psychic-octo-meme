@@ -1,11 +1,11 @@
 class Frames(object):
 	"""docstring for Frames"""
-	def choose_frame(self,wheels):
-		options = wheels.keys()
+	def choose_frame(self,frames):
+		options = frames.keys()
 		i = 1
 		for option in options:
 			print "{}. Model Name: {}".format(i,option)
-			print "   Material: {}\n   Weight(g): {}\n   Production Cost(EUR): {}\n".format(wheels[option]["material"], wheels[option]["weight"], wheels[option]["cost"])
+			print "   Weight(g): {}\n   Production Cost(EUR): {}\n".format(frames[option]["weight"], frames[option]["cost"])
 			i += 1
 			
 		user_input = raw_input("Which wheel do you want to choose? ")
@@ -15,13 +15,13 @@ class Frames(object):
 			return options[user_input-1]
 		else:
 			print("Please choose a valid option!\n")
-			return self.choose_frame(wheels)
+			return self.choose_frame(frames)
 
 	def __init__(self):
-		frames = {'Aluminum': {'cost': 150, 'weight': 890}, 'Steel': {'cost': 50, 'weight': 2725},'Carbon': {'cost': 500, 'weight': 865, 'type':"Track"}}
-		self.material = self.choose_frame(frames)
-		self.weight_frame = frames[self.material]["weight"]
-		self.cost_frame = frames[self.material]["cost"]
+		frames = {'Aluminum': {'cost': 250, 'weight': 1432}, 'Steel': {'cost': 100, 'weight': 2725},'Carbon': {'cost': 500, 'weight': 1340, 'type':"Track"}}
+		self.frame_material = self.choose_frame(frames)
+		self.frame_weight = frames[self.frame_material]["weight"]
+		self.frame_cost = frames[self.frame_material]["cost"]
 		
 	def __str__(self):
-		return "Material: {}\nWeight (g): {}\n".format(self.material,self.weight_frame)
+		return "Material: {}\nWeight (g): {}\n".format(self.frame_material,self.frame_weight)

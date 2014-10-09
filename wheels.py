@@ -6,10 +6,10 @@ class Wheels(object):
 		i = 1
 		for option in options:
 			print "{}. Model Name: {}".format(i,option)
-			print "   Weight(g): {}\n   Production Cost(EUR): {}\n".format(wheels[option]["weight"], wheels[option]["cost"])
+			print "   Weight: {} g\n   Production Cost: EUR {}\n".format(wheels[option]["weight"], wheels[option]["cost"])
 			i += 1
 			
-		user_input = raw_input("Which wheel do you want to choose? ")
+		user_input = raw_input("Which wheels do you want to choose? ")
 		print("")
 		if isinstance(int(user_input),int) and user_input > 0 and int(user_input) <= i:
 			user_input = int(user_input)

@@ -1,14 +1,15 @@
 class Frames(object):
 	"""docstring for Frames"""
+	
 	def choose_frame(self,frames):
 		options = frames.keys()
 		i = 1
 		for option in options:
-			print "{}. Model Name: {}".format(i,option)
-			print "   Weight(g): {}\n   Production Cost(EUR): {}\n".format(frames[option]["weight"], frames[option]["cost"])
+			print "{}. Material: {}".format(i,option)
+			print "   Weight: {} g\n   Production Cost: EUR {}\n".format(frames[option]["weight"], frames[option]["cost"])
 			i += 1
 			
-		user_input = raw_input("Which wheel do you want to choose? ")
+		user_input = raw_input("Which frame do you want to choose? ")
 		print("")
 		if isinstance(int(user_input),int) and user_input > 0 and int(user_input) <= i:
 			user_input = int(user_input)

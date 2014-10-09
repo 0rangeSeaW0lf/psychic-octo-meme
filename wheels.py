@@ -1,6 +1,6 @@
 class Wheels(object):
 	"""docstring for Wheels"""
-	
+	# Procedure to ask the buyer which wheels he or she would like to choose
 	def choose_wheel(self,wheels):
 		options = wheels.keys()
 		i = 1

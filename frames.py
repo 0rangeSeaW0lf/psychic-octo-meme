@@ -1,6 +1,7 @@
 class Frames(object):
 	"""docstring for Frames"""
 	
+	# Procedure to ask the buyer which frame he or she would like to choose
 	def choose_frame(self,frames):
 		options = frames.keys()
 		i = 1

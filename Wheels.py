@@ -22,8 +22,8 @@ class Wheels(object):
 		wheels = {'Torch': {'cost': 120, 'weight': 890,'type':"Mountain"}, 'Mavic': {'cost': 190, 'weight': 685, 'type':"Road"},'Zipp': {'cost': 95, 'weight': 865, 'type':"Track"}}
 		self.model_name = self.choose_wheel(wheels)
 		self.wheel_type = wheels[self.model_name]["type"]
-		self.weight = wheels[self.model_name]["weight"]
+		self.weight_wheel = wheels[self.model_name]["weight"]
 		self.production_cost = wheels[self.model_name]["cost"]
 		
 	def __str__(self):
-		return "Model: {0}\nType: {2}\nWeight (g): {1}\n".format(self.model_name,self.weight,self.wheel_type)
+		return "Model: {0}\nType: {2}\nWeight (g): {1}\n".format(self.model_name,self.weight_wheel,self.wheel_type)

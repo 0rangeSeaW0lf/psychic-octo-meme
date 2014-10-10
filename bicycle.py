@@ -11,8 +11,8 @@ class Bicycle(object):
 	def __init__(self, manufacturer):
 		# the names list contains model from Specialized bikes as I am a huge fan of its bikes (I own one! :-))
 		names = ["Pitch", "Epic", "Source", "Enduro", "Fatboy", "Status", "Demo", "Tarmac", "Allez", "Venge", "Shiv", "Roubaix", "Secteur", "Diverge", "Awol", "Crux", "Langster", "Sirrus", "Daily", "Crosstail", "CossRoads", "Expedition"]
-		self.frame = Frames()
-		self.wheels = Wheels()
+		self.frame = Frames(1)
+		self.wheels = Wheels(1)
 		self.manufacturer = manufacturer
 		self.model_name = choice(names)
 		self.weight = (self.frame.frame_weight + 2 * self.wheels.wheel_weight)/1000.0

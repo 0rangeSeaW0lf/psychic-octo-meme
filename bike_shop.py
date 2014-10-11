@@ -6,12 +6,12 @@ class Shop(object):
 	    if type(user_input) == type_input:
 	        return user_input
     
-    def __init__(self,shop_name):
+    def __init__(self,shop_name,markup=0.1):
         self.shop_name = shop_name
+        self.markup = markup
         self.shop_inventory = {}
         self.shop_stock = 0
         self.profit = 0
-        self.markup = 0.2
         
     def __str__(self):
         return "{}".format(self.shop_name)
@@ -33,10 +33,6 @@ class Shop(object):
         else:
             for manufacturer in manufacturers:
                 self.add_bike_to_stock(manufacturers,manufacturer,quantity)
-                # order = manufacturers[manufacturer].sell_bicycle("",quantity)
-                # self.shop_stock += len(order)
-                # for bikes in order.keys():
-                #     self.shop_inventory["{} {}".format(manufacturer,bikes)] = order[bikes]
                     
     def add_bike_to_stock(self,manufacturers,manufacturer,quantity):
         order = {}

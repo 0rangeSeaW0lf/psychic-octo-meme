@@ -16,7 +16,7 @@ class Bicycle(object):
 		self.manufacturer = manufacturer
 		self.model_name = choice(names)
 		self.weight = (self.frame.frame_weight + 2 * self.wheels.wheel_weight)/1000.0
-		self.cost = int(self.frame.frame_cost + 2 * self.wheels.wheel_cost)
+		self.cost = self.frame.frame_cost + 2 * self.wheels.wheel_cost
 		
 	def __str__(self):
 	    return "Manufacturer: {}\nModel: {}\nWeight: {:.2f} Kg\nFrame: {}\nWheels: {}".format(self.manufacturer ,self.model_name,self.weight,self.frame.frame_material,self.wheels.wheel_model)

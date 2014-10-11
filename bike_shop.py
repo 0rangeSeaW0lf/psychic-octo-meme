@@ -1,13 +1,13 @@
 from bike_manufacturer import Manufacturer
 
-class Bike_Shop(object):
+class Shop(object):
     """docstring for Bike_Shop"""
     def check_input(self,user_input,type_input):
 	    if type(user_input) == type_input:
 	        return user_input
     
-    def __init__(self):
-        self.shop_name = self.check_input(raw_input("Shop Name:"),chr)
+    def __init__(self,shop_name):
+        self.shop_name = shop_name#self.check_input(raw_input("Shop Name: "),chr)
         self.shop_inventory = {}
         self.shop_stock = 0
         self.profit = 0
@@ -25,7 +25,7 @@ class Bike_Shop(object):
             user_input = ("From which company do you want to buy bicycles?")
         else:
             for manufacturer in manufacturers:
-                order = manufacturer.sell_bicycle("",quantity)
+                order = manufacturers[manufacturer].sell_bicycle("",quantity)
                 self.shop_stock += len(order)
                 for bikes in order.keys():
-                    self.shop_inventory["{} {}".format(manufacturer,bik)] = order[bikes]
+                    self.shop_inventory["{} {}".format(manufacturer,bikes)] = order[bikes]

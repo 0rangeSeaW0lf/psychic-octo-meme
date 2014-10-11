@@ -4,7 +4,7 @@ class Manufacturer(object):
     """docstring for Manufacturer"""
     # Procedure to manufacture bicycles
     
-    def __init__(self, manufacturer_name,margin,bikes=3):
+    def __init__(self, manufacturer_name,margin=0.1,bikes=3):
         self.manufacturer_name = manufacturer_name
         self.margin = margin
         self.inventory = self.make_bike(bikes)

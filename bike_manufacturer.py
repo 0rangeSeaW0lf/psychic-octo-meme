@@ -25,6 +25,7 @@ class Manufacturer(object):
                     bicycles[bike.model_name] = bike
                     # Add the margin of the bike manufacturer to the cost of the bike
                     bicycles[bike.model_name].cost *= 1 + margin
+                    bicycles[bike.model_name].cost = bicycles[bike.model_name].cost
                     break
                 else:
                     continue

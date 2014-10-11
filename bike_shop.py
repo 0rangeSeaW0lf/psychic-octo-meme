@@ -7,7 +7,7 @@ class Shop(object):
 	        return user_input
     
     def __init__(self,shop_name):
-        self.shop_name = shop_name#self.check_input(raw_input("Shop Name: "),chr)
+        self.shop_name = shop_name
         self.shop_inventory = {}
         self.shop_stock = 0
         self.profit = 0

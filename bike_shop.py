@@ -17,15 +17,30 @@ class Shop(object):
         return "{}".format(self.shop_name)
         
     def order_bicycle(self,manufacturers = {},quantity="3"):
-        order = {}
         if not manufacturers:
+            manufacturer_names = manufacturers.keys()
             i = 1
-            for manufacturer in manufacturers.keys():
+            for manufacturer in manufacturer_names:
                 print "{}. {}".format(i,manufacturer)
             user_input = ("From which company do you want to buy bicycles?")
+            if user_input.isdigit() and int(user_input) > 0:
+                manufacturer = manufacturer_names[int(user_input)-1]
+                self.add_bike_to_stock(manufacturers,manufacturer,quantity)
+            else:
+                print("Sorry, wrong input. Please try again")
+                return self.order_bicycle(manufacturers,quantity)
+            
         else:
             for manufacturer in manufacturers:
-                order = manufacturers[manufacturer].sell_bicycle("",quantity)
-                self.shop_stock += len(order)
-                for bikes in order.keys():
-                    self.shop_inventory["{} {}".format(manufacturer,bikes)] = order[bikes]
+                self.add_bike_to_stock(manufacturers,manufacturer,quantity)
+                # order = manufacturers[manufacturer].sell_bicycle("",quantity)
+                # self.shop_stock += len(order)
+                # for bikes in order.keys():
+                #     self.shop_inventory["{} {}".format(manufacturer,bikes)] = order[bikes]
+                    
+    def add_bike_to_stock(self,manufacturers,manufacturer,quantity):
+        order = {}
+        order = manufacturers[manufacturer].sell_bicycle("",quantity)
+        self.shop_stock += len(order)
+        for bikes in order.keys():
+            self.shop_inventory["{} {}".format(manufacturer,bikes)] = order[bikes]

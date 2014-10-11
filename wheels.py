@@ -26,7 +26,7 @@ class Wheels(object):
 			return self.choose_wheel(wheels)
 
 	def __init__(self,user=""):
-		wheels = {'Torch': {'cost': 100, 'weight': 900}, 'Mavic': {'cost': 150, 'weight': 685},'Zipp': {'cost': 50, 'weight': 865}}
+		wheels = {'Torch': {'cost': 50, 'weight': 900}, 'Mavic': {'cost': 100, 'weight': 685},'Zipp': {'cost': 25, 'weight': 865}}
 		self.wheel_model = self.choose_wheel(wheels,user)
 		self.wheel_weight = wheels[self.wheel_model]["weight"]
 		self.wheel_cost = wheels[self.wheel_model]["cost"]

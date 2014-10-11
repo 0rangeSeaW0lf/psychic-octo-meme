@@ -27,7 +27,7 @@ class Frames(object):
 			return self.choose_frame(frames)
 
 	def __init__(self,user=""):
-		frames = {'Aluminum': {'cost': 200, 'weight': 1432}, 'Steel': {'cost': 75, 'weight': 2725},'Carbon': {'cost': 350, 'weight': 1340, 'type':"Track"}}
+		frames = {'Aluminum': {'cost': 150, 'weight': 1432}, 'Steel': {'cost': 50, 'weight': 2725},'Carbon': {'cost': 300, 'weight': 1340, 'type':"Track"}}
 		self.frame_material = self.choose_frame(frames,user)
 		self.frame_weight = frames[self.frame_material]["weight"]
 		self.frame_cost = frames[self.frame_material]["cost"]

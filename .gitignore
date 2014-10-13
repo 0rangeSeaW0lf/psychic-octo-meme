@@ -55,3 +55,7 @@ target/
 
 # C9
 .c9/
+
+#SQL
+*.db
+*.sql

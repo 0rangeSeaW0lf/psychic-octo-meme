@@ -59,3 +59,12 @@ target/
 #SQL
 *.db
 *.sql
+
+#CSV
+*.csv
+
+#Project Folder
+projects/
+
+#Test files
+test*.*
